@@ -1,0 +1,31 @@
+In this part of the assignment, you will write a program to install the necessary OpenFlow rules 
+to deploy a simple middlebox
+
+
+
+
+
+
+# Build the network:
+sudo mn --mac --topo=linear,5 --controller=remote,ip=127.0.0.1,port=6633
+# Run the pox
+./pox.py --verbose py openflow.of_01 --port=6633 openflow.discovery forwarding.l2_learning host_tracker cs456.a3
+
+sudo mn --mac --topo=linear,5 --controller=remote,ip=127.0.0.1,port=6633
+
+
+xterm h1 cd /home/mininet/cs456-a3/part-D
+
+# 
+def install_udp_middlebox_flow( source_dpid
+                              , destination_dpid
+                              , middlebox_dpid
+                              , source_port
+                              , destination_port):
+
+
+# install the middlebox flow rules
+from cs456.a3 import *
+install_udp_middlebox_flow(1,3,2,5000,6000)
+
+helper_routes(1,5,3,5000,6000)
